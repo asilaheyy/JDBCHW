@@ -29,12 +29,10 @@ public class Application {
 
             //Новый созданный сотрудник не добавляется в общий список
         EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
-            Employee employee = new Employee(4,"Liza", "Kotova",22, "Female",new City(3, "RND"));
-            employeeDAO.create(employee);
-            System.out.println(employee);
-            System.out.println(employeeDAO.readAll());
+            City city = new City(4, "NSK");
 
 
+            System.out.println(employeeDAO.readAll().toString());
 
         }
 

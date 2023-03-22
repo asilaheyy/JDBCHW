@@ -72,7 +72,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         List<Employee> employeeList = new ArrayList<>();
 
         try (PreparedStatement statement = connection.prepareStatement(
-                "SELECT * FROM employee INNER JOIN city ON employee.id=city.city_id")) {
+                "SELECT * FROM employee INNER JOIN city ON employee.city_id=city.city_id")) {
 
             ResultSet resultSet = statement.executeQuery();
 
@@ -102,15 +102,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
     public void updateEmployeeById(int id, String first_name, String last_name, int age, String gender, int city_id) {
         try (PreparedStatement statement = connection.prepareStatement(
-                "UPDATE employee SET id =?, first_name =?, last_name =?, age =?, gender=?, city_id =? WHERE id=?")) {
+                "UPDATE employee SET first_name =?, last_name =?, age =?, gender=?, city_id =? WHERE employee.id=?")) {
 
-            statement.setInt(1, id);
-            statement.setString(2, first_name);
-            statement.setString(3, last_name);
-            statement.setInt(4, age);
-            statement.setString(5, gender);
-            statement.setInt(6, city_id);
 
+            statement.setString(1, first_name);
+            statement.setString(2, last_name);
+            statement.setInt(3, age);
+            statement.setString(4, gender);
+            statement.setInt(5, city_id);
+            statement.setInt(6, id);
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

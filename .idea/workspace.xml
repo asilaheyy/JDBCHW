@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30f9bb2-9caa-465e-b284-3932690e858d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EmployeeDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a30f9bb2-9caa-465e-b284-3932690e858d" name="Changes" comment="Новый созданный сотрудник не добавляется в общий список">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EmployeeDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmployeeDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +58,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679044347854</updated>
-      <workItem from="1679044349475" duration="12438000" />
+      <workItem from="1679044349475" duration="16808000" />
     </task>
+    <task id="LOCAL-00001" summary="Новый созданный сотрудник не добавляется в общий список">
+      <created>1679130831126</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679130831126</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Новый созданный сотрудник не добавляется в общий список">
+      <created>1679130969933</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679130969933</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,5 +90,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Новый созданный сотрудник не добавляется в общий список" />
+    <option name="LAST_COMMIT_MESSAGE" value="Новый созданный сотрудник не добавляется в общий список" />
   </component>
 </project>
