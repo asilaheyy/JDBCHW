@@ -12,10 +12,10 @@ public interface EmployeeDAO {
     List<Employee> readAll();
 
     // Изменение объекта по id
-    void updateEmployeeById(int id, String first_name, String last_name, int age, String gender, int city_id);
+    void updateEmployee(int id);
 
     // Удаление объекта по id
-    void deleteById(int id);
+    void delete(int id);
 
 
 }

@@ -1,8 +1,20 @@
 import java.sql.*;
+import java.util.List;
 
 public class Application {
     public static void main(String[] args) throws SQLException {
-        final String user = "postgres";
+
+        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+
+
+
+        List<Employee> list = employeeDAO.readAll();
+        for (Employee employee : list){
+            System.out.println(employee);
+        }
+        employeeDAO.updateEmployee(3);
+
+        /*final String user = "postgres";
         final String passw = "1945";
         final String url = "jdbc:postgresql://localhost:5432/prosky";
 
@@ -34,7 +46,7 @@ public class Application {
 
             System.out.println(employeeDAO.readAll().toString());
 
-        }
+        }*/
 
 
 
