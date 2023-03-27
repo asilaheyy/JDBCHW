@@ -7,12 +7,16 @@ public class Application {
         EmployeeDAO employeeDAO = new EmployeeDAOImpl();
 
 
+         Employee newemployee = new Employee("Artur", "Pirozhkov", 47, "Male", 1);
+
+         newemployee.setAge(48);
+       employeeDAO.updateEmployee(31);
+
 
         List<Employee> list = employeeDAO.readAll();
         for (Employee employee : list){
             System.out.println(employee);
         }
-        employeeDAO.updateEmployee(3);
 
         /*final String user = "postgres";
         final String passw = "1945";
