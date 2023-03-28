@@ -1,58 +1,68 @@
+import javax.persistence.EntityManager;
 import java.sql.*;
 import java.util.List;
 
 public class Application {
     public static void main(String[] args) throws SQLException {
 
-        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+        HibernateSessionFactoryUtil hibernateSessionFactoryUtil = new HibernateSessionFactoryUtil();
 
 
-         Employee newemployee = new Employee("Artur", "Pirozhkov", 47, "Male", 1);
+        //СОЗДАНИЕ СОТРУДНИКОВ
+      /*  hibernateSessionFactoryUtil.withEntityManager(em -> {
+            Employee newemployee = new Employee();
+            newemployee.setFirst_name("Artur");
+            newemployee.setLast_name("Pirozhkov");
+            newemployee.setAge(48);
+            newemployee.setGender("Male");
+            newemployee.setCity_id(1);
+            em.persist(newemployee);
+        });
 
-         newemployee.setAge(48);
-       employeeDAO.updateEmployee(31);
+        hibernateSessionFactoryUtil.withEntityManager(em -> {
+            Employee employee1 = new Employee();
+            employee1.setFirst_name("Alisa");
+            employee1.setLast_name("Aleksandrova");
+            employee1.setAge(21);
+            employee1.setGender("Female");
+            employee1.setCity_id(1);
+            em.persist(employee1);
+        });
+*/
+        //ПОИСК СОТРУДНИКА ПО ID
+        hibernateSessionFactoryUtil.withEntityManager(em -> {
+            Employee employeeFromDataBase = em.find(Employee.class,53);
+            System.out.println(employeeFromDataBase.getFirst_name());
+            System.out.println(employeeFromDataBase.getLast_name());
+        });
 
-
-        List<Employee> list = employeeDAO.readAll();
-        for (Employee employee : list){
+        //ОБНОВЛЕНИЕ ДАННЫХ СОТРУДНИКА
+        hibernateSessionFactoryUtil.withEntityManager(em -> {
+            Employee employee = em.find(Employee.class, 53);
+            employee.setAge(22);
+            employee.setCity_id(3);
             System.out.println(employee);
-        }
+        });
 
-        /*final String user = "postgres";
-        final String passw = "1945";
-        final String url = "jdbc:postgresql://localhost:5432/prosky";
+        //ВЫВОД ВСЕХ СОТРУДНИКОВ
+        hibernateSessionFactoryUtil.withEntityManager(em ->{
+            List<Employee> allEmployees = em.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();
+            System.out.println(allEmployees);
+        });
 
+      /* НАХОДИМ СОТРУДНИКА ПО ID
+       hibernateSessionFactoryUtil.withEntityManager(em -> {
+            Employee employee = em.find(Employee.class, 31);
+            System.out.println(employee.getFirst_name());
+            System.out.println(employee.getLast_name());
+        });
+*/
+       /* УДАЛЯЕМ СОТРУДНИКА ПО ID
+       hibernateSessionFactoryUtil.withEntityManager(em -> {
+            Employee employee = em.find(Employee.class, 31);
+            em.remove(employee);
 
-        try(final Connection connection = DriverManager.getConnection(url, user, passw);
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM employee WHERE id = ?")){
-            statement.setInt(1, 2);
-            final ResultSet resultSet = statement.executeQuery();
-
-            // Методом next проверяем есть ли следующий элемент в resultSet
-            // и одновременно переходим к нему, если таковой есть
-            while (resultSet.next()) {
-
-                // С помощью методов getInt и getString получаем данные из resultSet
-                String nameOfEmployee = "Name: " + resultSet.getString("first_name");
-                String lastNameOfEmpoyee = "Last name: " + resultSet.getString("last_name");
-                int employeeId = resultSet.getInt(1);
-
-                // Выводим данные в консоль
-                System.out.println(nameOfEmployee);
-                System.out.println(lastNameOfEmpoyee);
-                System.out.println("ID: " + employeeId);
-            }
-
-            //Новый созданный сотрудник не добавляется в общий список
-        EmployeeDAO employeeDAO = new EmployeeDAOImpl(connection);
-            City city = new City(4, "NSK");
-
-
-            System.out.println(employeeDAO.readAll().toString());
-
-        }*/
-
-
+        });*/
 
     }
 }

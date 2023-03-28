@@ -18,7 +18,8 @@ public class Employee {
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "age")
+    @Column(name = "age",
+    nullable = false)
     private int age;
 
     @Column(name = "city_id")
