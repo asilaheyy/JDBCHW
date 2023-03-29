@@ -5,10 +5,37 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) throws SQLException {
 
-        HibernateSessionFactoryUtil hibernateSessionFactoryUtil = new HibernateSessionFactoryUtil();
+        final String user = "postgres";
+        final String passw = "1945";
+        final String url = "jdbc:postgresql://localhost:5432/prosky";
 
 
-        //СОЗДАНИЕ СОТРУДНИКОВ
+        try (final Connection connection = DriverManager.getConnection(url, user, passw);
+             PreparedStatement statement = connection.prepareStatement("SELECT * FROM employee WHERE id = ?")) {
+            statement.setInt(1, 2);
+            final ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+
+                String nameOfEmployee = "Name: " + resultSet.getString("first_name");
+                String lastNameOfEmpoyee = "Last name: " + resultSet.getString("last_name");
+                int employeeId = resultSet.getInt(1);
+                System.out.println(nameOfEmployee);
+                System.out.println(lastNameOfEmpoyee);
+                System.out.println("ID: " + employeeId);
+            }
+            //Новый созданный сотрудник не добавляется в общий список
+            EmployeeDAO employeeDAO = new EmployeeDAOimpl(connection);
+            Employee employee = new Employee(5, "Alisa", "Aleksandrova", 21, "Female", new City(1, "SPB"));
+            employeeDAO.create(employee);
+
+            System.out.println(employee);
+            System.out.println(employeeDAO.readAll());
+
+
+            //////////////////////////////////////////////////////////////////////////////////////
+
+
+            //СОЗДАНИЕ СОТРУДНИКОВ
     /*hibernateSessionFactoryUtil.withEntityManager(em -> {
           City newCity = new City();
           newCity.setId(3);
@@ -37,7 +64,7 @@ public class Application {
         */
 
 
-       //ПОИСК СОТРУДНИКА ПО ID
+            //ПОИСК СОТРУДНИКА ПО ID
         /*hibernateSessionFactoryUtil.withEntityManager(em -> {
             Employee employeeFromDataBase = em.find(Employee.class,1);
             System.out.println(employeeFromDataBase.getFirst_name());
@@ -45,7 +72,7 @@ public class Application {
             System.out.println(employeeFromDataBase.getCity().cityNameAndID());
         });*/
 
-        //ОБНОВЛЕНИЕ ДАННЫХ СОТРУДНИКА
+            //ОБНОВЛЕНИЕ ДАННЫХ СОТРУДНИКА
        /* hibernateSessionFactoryUtil.withEntityManager(em -> {
             City cityRND = new City(3,"RND");
             Employee employee = em.find(Employee.class, 56);
@@ -57,7 +84,7 @@ public class Application {
             System.out.println(employee);
         });*/
 
-        //ВЫВОД ВСЕХ СОТРУДНИКОВ
+            //ВЫВОД ВСЕХ СОТРУДНИКОВ
       /* hibernateSessionFactoryUtil.withEntityManager(em ->{
             List<Employee> allEmployees = em.createQuery("SELECT e FROM Employee e", Employee.class).getResultList();
             System.out.println(allEmployees);
@@ -70,13 +97,14 @@ public class Application {
             System.out.println(employee.getLast_name());
         });
 */
-       // УДАЛЯЕМ СОТРУДНИКА ПО ID
+            // УДАЛЯЕМ СОТРУДНИКА ПО ID
       /* hibernateSessionFactoryUtil.withEntityManager(em -> {
             Employee employee = em.find(Employee.class, 57);
             em.remove(employee);
 
         });*/
 
-    }
+        }
 
+    }
 }
