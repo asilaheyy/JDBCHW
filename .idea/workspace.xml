@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30f9bb2-9caa-465e-b284-3932690e858d" name="Changes" comment="Не получается метод редактирования">
+    <list default="true" id="a30f9bb2-9caa-465e-b284-3932690e858d" name="Changes" comment="переделала">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EmployeeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EmployeeDAOImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HibernateSessionFactoryUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +73,8 @@
       <updated>1679044347854</updated>
       <workItem from="1679044349475" duration="16808000" />
       <workItem from="1679474450329" duration="829000" />
-      <workItem from="1679561334499" duration="18078000" />
+      <workItem from="1679561334499" duration="18925000" />
+      <workItem from="1680080915277" duration="5525000" />
     </task>
     <task id="LOCAL-00001" summary="Новый созданный сотрудник не добавляется в общий список">
       <created>1679130831126</created>
@@ -113,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679946047825</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="переделала">
+      <created>1680005228708</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680005228708</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +140,7 @@
     <MESSAGE value="Починила" />
     <MESSAGE value="Помощь с реализацией updateEmployee и delete" />
     <MESSAGE value="Не получается метод редактирования" />
-    <option name="LAST_COMMIT_MESSAGE" value="Не получается метод редактирования" />
+    <MESSAGE value="переделала" />
+    <option name="LAST_COMMIT_MESSAGE" value="переделала" />
   </component>
 </project>

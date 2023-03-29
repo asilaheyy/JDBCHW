@@ -15,6 +15,7 @@ public class HibernateSessionFactoryUtil {
     public HibernateSessionFactoryUtil() {
         Configuration configuration = new Configuration().configure();
         configuration.addAnnotatedClass(Employee.class);
+        configuration.addAnnotatedClass(City.class);
         this.sessionFactory = configuration.buildSessionFactory();
     }
 

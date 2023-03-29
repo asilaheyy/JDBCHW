@@ -1,5 +1,6 @@
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Optional;
 
 @Entity
 @Table(name = "employee")
@@ -22,28 +23,29 @@ public class Employee {
     nullable = false)
     private int age;
 
-    @Column(name = "city_id")
-    private int city_id;
+
+    @ManyToOne(optional = false)
+    private City city;
 
     public Employee() {
 
     }
 
-    public Employee(String first_name, String last_name,  int age, String gender, int city_id) {
+    public Employee(String first_name, String last_name,  int age, String gender, City city) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender;
         this.age = age;
-        this.city_id = city_id;
+        this.city = city;
     }
 
-    public Employee(int id, String first_name, String last_name, int age, String gender, int city_id) {
+    public Employee(int id, String first_name, String last_name, int age, String gender, City city) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.gender = gender;
         this.age = age;
-        this.city_id = city_id;
+        this.city = city;
     }
 
     public int getId() {
@@ -86,12 +88,12 @@ public class Employee {
         this.gender = gender;
     }
 
-    public int getCity_id() {
-        return city_id;
+    public City getCity() {
+        return city;
     }
 
-    public void setCity_id(int city_id) {
-        this.city_id = city_id;
+    public void setCity(City city) {
+        this.city = city;
     }
 
     @Override
@@ -99,12 +101,12 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return id == employee.id && age == employee.age && city_id == employee.city_id && Objects.equals(first_name, employee.first_name) && Objects.equals(last_name, employee.last_name) && Objects.equals(gender, employee.gender);
+        return id == employee.id && age == employee.age && city == employee.city && Objects.equals(first_name, employee.first_name) && Objects.equals(last_name, employee.last_name) && Objects.equals(gender, employee.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, first_name, last_name, gender, age, city_id);
+        return Objects.hash(id, first_name, last_name, gender, age, city);
     }
 
     @Override
@@ -115,7 +117,7 @@ public class Employee {
                 "LAST NAME: " + last_name + "\n" +
                 "GENDER: " + gender + "\n" +
                 "AGE: " + age +"\n"+
-                "CITY: " + city_id +
+                "CITY: " + city +
                 "---------------";
     }
 
