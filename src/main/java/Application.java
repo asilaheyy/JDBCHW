@@ -9,10 +9,11 @@ public class Application {
 
         Employee employee = new Employee("B", "C", 4, "Male",new City(4, "KRD"));
 
-        System.out.println( employeeDAO.readById(61));
 
-        employee.setFirst_name("Hello");
-        employeeDAO.updateEmployee(0);
+        System.out.println( employeeDAO.readById(61));
+        employeeDAO.deleteById(employee);
+
+        System.out.println( employeeDAO.readAll());
 
 
 

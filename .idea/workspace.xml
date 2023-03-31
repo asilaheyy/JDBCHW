@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a30f9bb2-9caa-465e-b284-3932690e858d" name="Changes" comment="Вернула к DAO">
+    <list default="true" id="a30f9bb2-9caa-465e-b284-3932690e858d" name="Changes" comment="Нужна помощь с методом update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/EmployeeDAOimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmployeeDAOimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HibernateSessionFactoryUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/HibernateSessionFactoryUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,7 @@
       <workItem from="1679474450329" duration="829000" />
       <workItem from="1679561334499" duration="18925000" />
       <workItem from="1680080915277" duration="6189000" />
-      <workItem from="1680119532292" duration="3254000" />
+      <workItem from="1680119532292" duration="4227000" />
     </task>
     <task id="LOCAL-00001" summary="Новый созданный сотрудник не добавляется в общий список">
       <created>1679130831126</created>
@@ -147,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680120580238</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Нужна помощь с методом update">
+      <created>1680173697551</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680173697551</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +178,7 @@
     <MESSAGE value="переделала" />
     <MESSAGE value="ДЗ" />
     <MESSAGE value="Вернула к DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вернула к DAO" />
+    <MESSAGE value="Нужна помощь с методом update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Нужна помощь с методом update" />
   </component>
 </project>

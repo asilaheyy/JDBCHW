@@ -37,19 +37,19 @@ public class EmployeeDAOimpl implements EmployeeDAO {
 
 
     @Override
-    public void updateEmployee(int id) {
+    public void updateEmployee(Employee employee) {
        try(Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()){
            Transaction transaction = session.beginTransaction();
-           session.update(id);
+           session.update(employee);
            transaction.commit();
         }
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(Employee employee) {
       try(Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession()){
           Transaction transaction = session.beginTransaction();
-          session.delete(id);
+          session.delete(employee);
           transaction.commit();
       }
     }

@@ -13,8 +13,8 @@ public interface EmployeeDAO {
     // Изменение объекта по id
 
 
-    void updateEmployee(int id);
+    void updateEmployee(Employee employee);
 
     // Удаление объекта по id
-    void deleteById(int id);
+    void deleteById(Employee employee);
 }
